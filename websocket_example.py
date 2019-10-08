@@ -10,7 +10,7 @@ import base64
 import zlib
 
 def get_server_time():
-    url = "http://www.okex.com/api/general/v3/time"
+    url = "https://okex.co.kr/api/general/v3/time"
     response = requests.get(url)
     if response.status_code == 200:
         return response.json()['iso']
@@ -143,7 +143,7 @@ async def unsubscribe_without_login(url, channels):
 api_key = ''
 seceret_key = ''
 passphrase = ''
-url = 'wss://real.okex.com:10442/ws/v3'
+url = 'wss://real.okex.com:8443/ws/v3'
 # asyncio.get_event_loop().run_until_complete(login(url, api_key, passphrase, seceret_key))
 channels = ["swap/ticker:BTC-USD-SWAP"]
 # asyncio.get_event_loop().run_until_complete(subscribe(url, api_key, passphrase, seceret_key, channels))
